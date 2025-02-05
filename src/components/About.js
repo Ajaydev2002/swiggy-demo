@@ -1,5 +1,5 @@
 import UseClass from "./UserClass";
-import React from "react";
+import React, { useEffect } from "react";
 
 class About extends React.Component {
     constructor (props) {
@@ -13,7 +13,7 @@ class About extends React.Component {
         return (
             <div>
             <h1>About Us...</h1>
-            <h2>To know more about us please contact to the bellow provided number.</h2>
+            <h2>To know more about us please contact.</h2>
             <UseClass name ={"Ajay dev"} Location = {"Coimbatore"}/>
         </div>
         )

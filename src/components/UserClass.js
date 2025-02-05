@@ -29,12 +29,7 @@ class UseClass extends React.Component {
         const { count } = this.state;
         return (
             <div className="contact-details">
-                <h2>count : {count}</h2>
-                <button onClick={() => {
-                    this.setState({
-                        count: this.state.count + 1,
-                    });
-                }}>click to increase count</button>
+                <h2>Profile :</h2>
                  <img src={avatar_url} /> 
                 <h2>Name : {login}</h2>
                 <h2>Location : {id}</h2>
