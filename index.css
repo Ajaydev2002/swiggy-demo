@@ -128,8 +128,9 @@
 }
 .shimmer-card {
     width: 250px;
-    height: 400px;
+    height: 200px;
     background-color: #f0f0f0;
+    border-radius: 20px;
 }
 
 
@@ -222,26 +223,26 @@
 .category-title {
     display: flex;
     justify-content: space-between;
-    background-color: #d5d4d4;
+    background-color: #f7f6f6;
     padding-inline: 10px;
     box-shadow: 0px 10px 20px -20px gray;
     text-align: center;
     align-items: center;
+    margin: 0%;
 }
 .category-title:hover {
     cursor: pointer;
 }
-
+.category-title h3 {
+    margin: 0%;
+}
 .item-details {
-    width: 710px;
-    background-color: #f7f4f4;
-    box-shadow: 0px 10px 20px -20px gray;
-    margin-bottom: 10px;
-    border-radius: 10px;
+    width: 750px;
+    background-color: #ffffff;
+    border-bottom: 1px solid grey;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-inline: 20px;
 }
 .item-name-container {
     padding: 5px;
@@ -278,21 +279,49 @@
 .add-button {
     position: absolute;
     z-index: 10;
-    top: 103px;
+    top: 110px;
     left: 30px;
+    cursor: pointer;
 }
-.add-button p {
-    background-color: rgb(56, 54, 54);
+.add-button button {
+    background-color: rgb(0, 0, 0);
     color: #fff;
     text-align: center;
     margin-block-start: 0%;
-    padding-block: 10px;
+    padding-block: 5px;
     padding-inline: 15px;
     border-radius: 5px;
     font-size: 15px;
+}
+.add-button button:hover {
+    cursor: pointer;
 }
 
 
 .user-name-header {
     font-weight: bold;
+}
+
+
+.cart-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.cart-name {
+    text-align: center;
+    margin-top: 20px;
+}
+.cart-name h1 {
+    margin: 0%;
+}
+.cart-name button {
+    background-color: black;
+    color: #fff;
+    border-radius: 10px;
+   padding: 10px;
+   margin-top: 30px;
+}
+.cart-name button:hover {
+    cursor: pointer;
 }

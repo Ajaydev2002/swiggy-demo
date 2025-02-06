@@ -4,6 +4,7 @@ import { CDN_URL } from "../utils/constants";
 const RestrauntCardContainer = (props) => {
 
   const { resData } = props;
+  
   const resInfo = resData.info
 
   return (

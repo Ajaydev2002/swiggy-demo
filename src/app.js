@@ -8,6 +8,9 @@ import Error from "./components/Error";
 import RestrauntsMenu from "./components/RestrauntsMenu";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import UserContext from "./utils/UserContext";
+import { Provider } from "react-redux";
+import appStore from "./utils/appStore";
+import Cart from "./components/Cart"
 
 
 const Grocery = lazy(() => ("./components/Grocery"));
@@ -18,20 +21,22 @@ const Applayout = () => {
 
     useEffect(() => {
         const data = {
-             name : "Ajay",
+            name: "Ajay",
         }
         setUserName(data.name);
-    },[]);
+    }, []);
 
     return (
-        <UserContext.Provider value = {{loggedInUser : userName}}>
-        <div className="app">
-            <UserContext.Provider value = {{loggedInUser : "Ajay Dev"}}>
-            <Header />
+        <Provider store={appStore}>
+            <UserContext.Provider value={{ loggedInUser: userName }}>
+                <div className="app">
+                    <UserContext.Provider value={{ loggedInUser: "Sandeep R" }}>
+                        <Header />
+                    </UserContext.Provider>
+                    <Outlet />
+                </div>
             </UserContext.Provider>
-            <Outlet />
-        </div>
-        </UserContext.Provider>
+        </Provider>
     )
 }
 
@@ -53,11 +58,15 @@ const appRouter = createBrowserRouter([
                 element: <Contact />
             },
             {
-                path: "/Grocery",   
+                path: "/Grocery",
                 element:
                     <Suspense fallback={<h1>Loading...</h1>}>
                         <Grocery />
                     </Suspense>
+            },
+            {
+                path: "/Cart",
+                element: <Cart />
             },
             {
                 path: "/Restraunts/:resId",
